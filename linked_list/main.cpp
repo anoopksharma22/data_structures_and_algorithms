@@ -1,9 +1,12 @@
 #include<iostream>
+
+// Struct to represent a node
 struct Node
 {
     int value;
     Node* next;
 
+    // New node in instantiated with the value and it points to nullptr
     Node(int value)
     {
         this->value = value;
@@ -12,12 +15,14 @@ struct Node
 
 };
 
+// Struct to represent a linked list
 struct LinkedList
 {
-    Node* head;
-    Node* tail;
-    int length;
+    Node* head; // track head
+    Node* tail; // track tail 
+    int length; // track length of the linked list
 
+    // New node is created and both head and tail points to it.
     LinkedList(int value)
     {
         Node* node = new Node(value);
@@ -26,6 +31,10 @@ struct LinkedList
         length = 1;
     }
 
+    // head is copied to a temp variable so that we don't loose it
+    // new node is create
+    // head points to the new node
+    // new node point to previous node which we kept in temp.
     void push(int value)
     {
         Node* newNode = new Node(value);
@@ -35,6 +44,8 @@ struct LinkedList
         length += 1;        
     }
 
+    // Temp variable is needed since we are moving head forward else we will lose the list
+    // head = head->next simply moves head to next node
     void printlist()
     {
         Node* temp;
