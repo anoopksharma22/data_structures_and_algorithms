@@ -16,6 +16,7 @@ int main()
     int index = 2;
     std::cout<< "Test get(" << index << ") " << ": " << dll.get(index) << std::endl;
     
+    std::cout << "test";
     return 0;
     
 }
